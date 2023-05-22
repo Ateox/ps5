@@ -1,0 +1,43 @@
+﻿@page
+@using LataPrzestepne.Models
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<div class="text-center">
+    <p>
+        Lista aktywnych osób:
+    </p>
+    @foreach (var item in Model.Records)
+    {
+        <p>@item.Name</p>
+    }
+</div>
+
+<div class="text-center">
+    <h1 class="primary">Kalkulator lat przestępnych</h1>
+    <hr>
+    <span asp-validation-for="HistoryData.Year" style="color: red; font-weight:bold"></span><br>
+    <div>
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="HistoryData.Name"></label><br>
+                <input asp-for="HistoryData.Name" id="nameText" /><br>
+                <label asp-for="HistoryData.Year"></label><br>
+                <input asp-for="HistoryData.Year" id="yearText" /><br>
+                <br>
+            </div>
+            <button type="submit" id="btn" class="btn btn-primary">Zatwierdź</button>
+        </form>
+    </div>
+    <br>
+    <div id="dane">
+        @if (Model.HistoryData != null)
+        {
+            <p>
+            @Model.HistoryData.Year @Model.HistoryData.Result
+            </p>        
+        }
+    </div>
+</div>
