@@ -26,22 +26,29 @@ namespace LataPrzestepne.Pages
         public IQueryable<HistoryData> Records { get; set; }
         public IList<HistoryData> historyDataList { get; set; }
 
-        private readonly DataContext _context;
-        public IndexModel(ILogger<IndexModel> logger, DataContext context, IHistoryDataService historyDataService)
+        //private readonly DataContext _context;
+        public IndexModel(ILogger<IndexModel> logger, IHistoryDataService historyDataService)
         {
             _logger = logger;
             _historyDataService = historyDataService;
-            _context = context;
+            //_context = context;
         }
 
         public void OnGet()
         {
-            var historyDataList = _context.HistoryData.ToList();
-            Records = _historyDataService.GetActivePeople();
+            var historyDataList = _historyDataService.HistoryList();
+            //Records = _historyDataService.GetActivePeople();
         }
         public IActionResult OnPost() {
-            if(HistoryData.Year < 1899 || HistoryData.Year > 2024) { return Page(); }
-            historyDataList = _context.HistoryData.ToList();
+            if(HistoryData.Year == null)
+            {
+                return Page();
+            }
+            if(HistoryData.Year < 1899 || HistoryData.Year > 2024) {
+                HistoryData.Year = null;
+                return Page(); 
+            }
+            historyDataList = _historyDataService.HistoryList();
             HistoryData.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             HistoryData.Time = DateTime.Now;
             if(HistoryData.Name == null)
@@ -68,8 +75,7 @@ namespace LataPrzestepne.Pages
             {
                 HistoryData.Result = "To nie byl rok przestepny";
             }
-            _context.HistoryData.Add(HistoryData);
-            _context.SaveChanges();
+            _historyDataService.AddHistoryData(HistoryData);
             return Page();
         
         }

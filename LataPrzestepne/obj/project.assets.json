@@ -10459,19 +10459,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\admin\\.nuget\\packages\\": {}
+    "C:\\Users\\fabia\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\admin\\OneDrive\\Dokumenty\\.NET\\ps5\\LataPrzestepne\\LataPrzestepne\\LataPrzestepne.csproj",
+      "projectUniqueName": "C:\\Users\\fabia\\OneDrive\\Dokumenty\\.NET\\ps5\\LataPrzestepne\\LataPrzestepne\\LataPrzestepne.csproj",
       "projectName": "LataPrzestepne",
-      "projectPath": "C:\\Users\\admin\\OneDrive\\Dokumenty\\.NET\\ps5\\LataPrzestepne\\LataPrzestepne\\LataPrzestepne.csproj",
-      "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\admin\\OneDrive\\Dokumenty\\.NET\\ps5\\LataPrzestepne\\LataPrzestepne\\obj\\",
+      "projectPath": "C:\\Users\\fabia\\OneDrive\\Dokumenty\\.NET\\ps5\\LataPrzestepne\\LataPrzestepne\\LataPrzestepne.csproj",
+      "packagesPath": "C:\\Users\\fabia\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\fabia\\OneDrive\\Dokumenty\\.NET\\ps5\\LataPrzestepne\\LataPrzestepne\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\fabia\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

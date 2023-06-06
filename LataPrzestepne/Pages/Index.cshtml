@@ -4,20 +4,11 @@
 @{
     ViewData["Title"] = "Home page";
 }
-<div class="text-center">
-    <p>
-        Lista aktywnych osób:
-    </p>
-    @foreach (var item in Model.Records)
-    {
-        <p>@item.Name</p>
-    }
-</div>
 
 <div class="text-center">
     <h1 class="primary">Kalkulator lat przestępnych</h1>
     <hr>
-    <span asp-validation-for="HistoryData.Year" style="color: red; font-weight:bold"></span><br>
+    <span asp-validation-for="@Model.HistoryData.Year" style="color: red; font-weight:bold"></span><br>
     <div>
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
